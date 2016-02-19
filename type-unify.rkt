@@ -23,7 +23,7 @@
                         [r : Term]
                         [s : Subst]) : Subst  
   (local ([define (l-occurs-in? [rhs : Term]) : boolean
-            (type-case Term r
+            (type-case Term rhs
               [tArrow (dom rng) (or (l-occurs-in? dom)
                                     (l-occurs-in? rng))]
               [else (eq? l rhs)])]
